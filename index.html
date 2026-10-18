@@ -1,55 +1,129 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>BLACK ENERGY AI V6 - No Bugs</title><script src="https://cdn.tailwindcss.com"></script>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>BLACK ENERGY AI V7 - Exact Clone</title><script src="https://cdn.tailwindcss.com"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=JetBrains+Mono:wght@700&display=swap');*{font-family:'Space Grotesk',sans-serif}.mono{font-family:'JetBrains Mono',monospace}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes pulse{0%,100%{box-shadow:0 0 20px #ffeb00}50%{box-shadow:0 0 40px #ffeb00,0 0 60px #ff6b00}}@keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
-.float{animation:float 3s ease-in-out infinite}.energy-orb{animation:pulse 2.5s infinite}.scan::after{content:'';position:absolute;top:0;left:0;width:50%;height:2px;background:linear-gradient(90deg,transparent,#ffeb00,transparent);animation:scan 2s linear infinite}
-.cursor-dot{width:8px;height:8px;background:#ffeb00;border-radius:50%;position:fixed;pointer-events:none;z-index:9999;box-shadow:0 0 10px #ffeb00}.cursor-ring{width:28px;height:28px;border:1px solid rgba(255,235,0,.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:transform .15s ease-out}
-/* MOBILE FIXES */
-@media(max-width:768px){.cursor-dot,.cursor-ring{display:none!important}*{cursor:auto!important} .hide-mobile{display:none!important}}
-@media(min-width:769px){*{cursor:none}}
-.particle{position:fixed;width:2px;height:2px;background:#ffeb00;pointer-events:none;opacity:.5;border-radius:50%}
-input,textarea{font-size:16px!important} /* FIX iPhone zoom bug */
-.safe-bottom{padding-bottom:env(safe-area-inset-bottom)}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');*{font-family:'Space Grotesk',sans-serif}.mono{font-family:'JetBrains Mono',monospace}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}.float{animation:float 3s ease-in-out infinite}
+.hud-card{border:1px solid rgba(255,235,0,.25);background:linear-gradient(145deg,#0f0f0f,#0a0a0a);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 0 0 1px rgba(0,0,0,.8);position:relative}.hud-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#ffeb00,transparent);opacity:.6}
+.energy-orb-bg{background:radial-gradient(circle at 30% 30%,#fff8 0%,#ffeb00 20%,#ff8c00 40%,transparent 70%);box-shadow:0 0 30px #ffeb00,0 0 60px rgba(255,140,0,.4)}
 </style>
 </head>
-<body class="bg-[#050505] text-white min-h-[100dvh] overflow-x-hidden">
-<!-- CURSOR - DESKTOP ONLY -->
-<div id="cursorDot" class="cursor-dot hide-mobile"></div><div id="cursorRing" class="cursor-ring hide-mobile"></div>
-<div id="particles" class="hide-mobile"></div>
-<div id="flash" class="fixed inset-0 bg-yellow-400/10 pointer-events-none z-[100] hidden"></div>
+<body class="bg-[#050505] text-white min-h-screen">
+<!-- TOP GLOW ORB LIKE IMAGE -->
+<div class="fixed top-0 right-[30%] w-64 h-64 pointer-events-none z-10 hidden lg:block"><div class="w-full h-full rounded-full float energy-orb-bg opacity-90" style="filter:blur(0.5px)"></div><div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-full blur-xl"></div></div>
 
-<div class="flex min-h-[100dvh]">
-<!-- SIDEBAR DESKTOP -->
-<div class="hidden md:flex w-60 bg-[#0a0a0a] border-r border-yellow-400/20 p-4 flex-col shrink-0">
-<div class="flex items-center gap-2 mb-6"><div class="w-9 h-9 bg-yellow-400 rounded-xl flex items-center justify-center text-black font-black">⚡</div><div><div class="font-black text-xs tracking-widest">BLACK ENERGY</div><div class="text-[8px] mono opacity-50">V6 NO BUGS</div></div><div class="ml-auto text-[7px] bg-green-500/20 text-green-400 border border-green-500/30 px-2 py-1 rounded-full">ONLINE</div></div>
-<nav class="space-y-1.5 flex-1">
-<button class="w-full bg-yellow-400 text-black p-3 rounded-xl font-black text-xs text-left">⚡ Dashboard</button>
-<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs text-left hover:border-yellow-400/20">🎨 Generator</button>
-<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs text-left opacity-60">📜 History</button>
-<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs text-left opacity-60">⚙️ Core</button>
-</nav>
-<div class="mono text-[7px] opacity-20 border-t border-white/10 pt-2">MOBILE+DESKTOP • 100% FIXED • NO BUG</div>
-</div>
-
-<!-- MAIN -->
-<div class="flex-1 flex flex-col min-w-0">
-<!-- MOBILE HEADER FIXED -->
-<header class="md:hidden sticky top-0 z-30 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-yellow-400/20 p-3 flex justify-between items-center safe-top">
-<div class="flex items-center gap-2"><span class="text-lg">⚫</span><b class="text-sm tracking-widest">BLACK ENERGY AI</b><span class="text-[6px] bg-yellow-400 text-black px-1.5 py-0.5 rounded-full font-black">V6</span></div>
-<div class="flex gap-2"><span class="text-[8px] bg-green-500/20 text-green-400 border border-green-500/20 px-2 py-1 rounded-full">NO BUG ✓</span></div>
+<div class="border border-yellow-400/20 m-2 md:m-3 rounded-[20px] overflow-hidden bg-[#080808] min-h-[calc(100vh-16px)] flex flex-col">
+<!-- HEADER LIKE IMAGE -->
+<header class="flex justify-between items-center p-3 md:p-4 border-b border-yellow-400/10 bg-[#0a0a0a]">
+<div class="flex items-center gap-3"><div class="flex items-center gap-2 border border-yellow-400/30 rounded-xl px-3 py-2 bg-black"><div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center text-black font-black text-lg">⚡</div><div class="leading-none"><div class="font-black text-sm tracking-widest">BLACK</div><div class="font-black text-sm text-yellow-400 tracking-widest">ENERGY AI</div></div></div><span class="hidden md:block mono text-[10px] border border-yellow-400/20 bg-black px-3 py-1 rounded-full">v1.3.0 • ONLINE</span><span class="md:hidden text-[8px] bg-yellow-400 text-black px-2 py-1 rounded-full font-black">V6</span></div>
+<div class="flex items-center gap-2"><span class="hidden md:flex mono text-[9px] bg-green-500/10 border border-green-500/20 text-green-400 px-3 py-1.5 rounded-full">NO BUG ✓</span><span class="md:hidden text-[9px] bg-green-500/20 text-green-400 px-2 py-1 rounded-full border border-green-500/30">NO BUG ✓</span></div>
 </header>
 
-<div class="p-3 md:p-6 max-w-5xl w-full mx-auto flex-1 pb-20 md:pb-6">
-<div class="flex flex-col md:flex-row md:justify-between gap-2 mb-4">
-<div><h1 class="text-2xl md:text-3xl font-black">AI <span class="text-yellow-400">GENERATOR</span></h1><p class="mono text-[10px] opacity-50">V6 Fixed: Mobile cursor bug, touch, zoom, flash, orb drag - all fixed</p></div>
-<div class="flex gap-2"><div class="mono text-[9px] bg-[#111] border border-yellow-400/20 px-3 py-1.5 rounded-full">CORE: <span id="coreP">98.7%</span></div><div class="mono text-[9px] bg-green-500/10 border border-green-500/20 text-green-400 px-3 py-1.5 rounded-full">✓ NO BUGS</div></div>
+<div class="flex flex-1">
+<!-- SIDEBAR EXACT LIKE IMAGE -->
+<aside class="hidden md:flex w-56 bg-[#0a0a0a] border-r border-yellow-400/10 p-3 flex-col gap-2">
+<div class="space-y-1">
+<button class="w-full bg-yellow-400 text-black p-3 rounded-xl font-black text-xs flex items-center gap-2"><span class="w-5 h-5 bg-black/20 rounded flex items-center justify-center">⚡</span> Dashboard</button>
+<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs flex items-center gap-2 text-white/70 hover:text-white"><span class="w-5 h-5 bg-white/10 rounded flex items-center justify-center text-[10px]">🎨</span> AI Generator</button>
+<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs flex items-center gap-2 text-white/50"><span class="w-5 h-5 bg-white/5 rounded flex items-center justify-center">🕒</span> History</button>
+<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs flex items-center gap-2 text-white/50"><span class="w-5 h-5 bg-white/5 rounded flex items-center justify-center">⚡</span> Templates</button>
+<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs flex items-center gap-2 text-white/50"><span class="w-5 h-5 bg-white/5 rounded flex items-center justify-center">⭕</span> Energy Core</button>
+<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs flex items-center gap-2 text-white/50"><span class="w-5 h-5 bg-white/5 rounded flex items-center justify-center">📊</span> Analytics</button>
+<button class="w-full bg-[#111] border border-white/5 p-3 rounded-xl text-xs flex items-center gap-2 text-white/50"><span class="w-5 h-5 bg-white/5 rounded flex items-center justify-center">⚙️</span> Settings</button>
+</div>
+<div class="mt-auto mono text-[8px] opacity-30 border-t border-white/5 pt-3 leading-relaxed">SECURE CONNECTION • MODEL: BEA-4 ENGINE • LATENCY 12ms • GPU: ACTIVE</div>
+</aside>
+
+<!-- MAIN CONTENT EXACT LIKE IMAGE -->
+<main class="flex-1 p-3 md:p-5 bg-[#050505]">
+<div class="flex justify-between items-start mb-4">
+<div><h1 class="text-2xl md:text-3xl font-black tracking-tight">AI <span class="text-yellow-400">GENERATOR</span></h1><p class="mono text-[11px] opacity-50 mt-1">Generate images, concepts, and energy-driven designs with BLACK ENERGY AI</p></div>
+<div class="hidden md:flex items-center gap-2"><button class="w-8 h-8 bg-[#111] border border-white/10 rounded-lg flex items-center justify-center text-xs">☰</button><button class="w-8 h-8 bg-[#111] border border-white/10 rounded-lg flex items-center justify-center text-xs">🔔</button><div class="w-8 h-8 bg-[#222] rounded-full border border-white/10"></div></div>
 </div>
 
-<!-- PROMPT - MOBILE FIXED -->
-<div class="bg-[#0f0f0f] border border-yellow-400/30 rounded-[16px] p-3 md:p-4 flex flex-col gap-3 relative scan overflow-hidden">
-<div class="flex-1"><div class="mono text-[8px] text-yellow-400 tracking-widest mb-1">PROMPT • MOBILE OPTIMIZED • NO ZOOM BUG</div>
-<input id="prompt" class="w-full bg-black/50 border border-white/10 rounded-xl p-3 md:p-0 md:bg-transparent md:border-0 outline-none text-[16px] md:text-sm" placeholder="Describe energy..." autocomplete="off"></div>
-<div class="flex gap-2">
-<button onclick="randomP()" class="flex-1 md:flex
+<!-- PROMPT CARD EXACT -->
+<div class="hud-card rounded-[16px] p-4 flex flex-col md:flex-row gap-3 items-start md:items-center">
+<div class="flex-1 w-full"><div class="mono text-[10px] text-yellow-400 tracking-widest font-bold mb-1">PROMPT</div><input id="prompt" class="w-full bg-transparent outline-none text-sm text-white placeholder:text-white/30" value="A futuristic cyberpunk city powered by dark energy, neon yellow lightning, high detail, cinematic" placeholder="Describe your creation..."></div>
+<button onclick="generate()" id="genBtn" class="w-full md:w-auto bg-yellow-400 text-black px-8 py-3 rounded-xl font-black text-sm tracking-widest hover:bg-yellow-300 active:scale-95 transition">GENERATE</button>
+</div>
+
+<!-- OUTPUT + ENERGY CORE GRID EXACT -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+<!-- OUTPUT -->
+<div class="lg:col-span-2 hud-card rounded-[16px] p-4">
+<div class="flex justify-between items-center mb-3"><h3 class="font-black text-sm tracking-widest">OUTPUT</h3><span class="mono text-[10px] opacity-50">Generated in 4.2s • <span id="status">Ready</span></span></div>
+<div class="bg-black rounded-xl border border-white/10 overflow-hidden aspect-[16/9] relative group">
+<img id="out" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800" class="w-full h-full object-cover">
+<div id="placeholder" class="hidden absolute inset-0 bg-black flex items-center justify-center"><span class="mono text-xs opacity-30">Generate to see dark power</span></div>
+<div class="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur p-2 flex justify-between mono text-[9px]"><span>Resolution 2048x1365 • Style: Photoreal • Credits -35</span><span class="hidden md:block">⚡</span></div>
+</div>
+</div>
+
+<!-- ENERGY CORE EXACT -->
+<div class="hud-card rounded-[16px] p-4">
+<h3 class="font-black text-sm tracking-widest mb-3">ENERGY CORE</h3>
+<div class="flex justify-center my-4 relative"><div class="w-24 h-24 rounded-full energy-orb-bg float"></div><div class="absolute inset-0 flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-yellow-400/20 blur-xl"></div></div></div>
+<div class="mono text-[11px] space-y-2">
+<div><span class="text-yellow-400">Core Status: STABLE — 98.7%</span></div>
+<div class="flex justify-between"><span class="opacity-50">Power Level</span><span class="font-bold">∞ / ∞</span></div>
+<div class="text-yellow-400 font-bold tracking-widest text-center pt-2 border-t border-white/5 mt-2">DARK POWER • INFINITE CREATION</div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-4">
+<div class="bg-black border border-yellow-400/20 rounded-xl p-2 text-center"><div class="mono text-[8px] opacity-50">ACTIVE SESSIONS</div><div class="font-black text-lg text-yellow-100">1,274</div><div class="mono text-[9px] text-green-400">+12%</div></div>
+<div class="bg-black border border-white/10 rounded-xl p-2 text-center"><div class="mono text-[8px] opacity-50">TOTAL CREATIONS</div><div class="font-black text-lg">53,901</div><div class="mono text-[9px] text-green-400">+8.3%</div></div>
+<div class="bg-black border border-white/10 rounded-xl p-2 text-center"><div class="mono text-[8px] opacity-50">ENERGY USED</div><div class="font-black text-lg">842.5 kW</div><div class="mono text-[9px] text-red-400">-2.1%</div></div>
+</div>
+</div>
+</div>
+
+<!-- QUICK ACTIONS + RECENT - EXACT LIKE IMAGE MOBILE -->
+<div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+<div class="lg:col-span-2 hud-card rounded-[16px] p-4 lg:hidden">
+<h3 class="font-black text-sm mb-3">QUICK ACTIONS</h3>
+<div class="grid grid-cols-2 gap-2">
+<button onclick="quickPrompt('Cyberpunk City')" class="bg-black border border-yellow-400/30 p-3 rounded-xl text-xs flex items-center gap-2"><span>⚡</span> Cyberpunk City</button>
+<button onclick="quickPrompt('Mech Concept')" class="bg-black border border-white/10 p-3 rounded-xl text-xs flex items-center gap-2"><span>🤖</span> Mech Concept</button>
+<button onclick="quickPrompt('Energy Art')" class="bg-black border border-white/10 p-3 rounded-xl text-xs flex items-center gap-2 col-span-2 md:col-span-1"><span>🌀</span> Energy Art</button>
+</div>
+<div class="mt-4"><h3 class="font-black text-sm mb-2">RECENT BUILD</h3><div class="bg-black border border-white/10 rounded-xl p-3 flex gap-3 items-center"><img id="recentThumb" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=100" class="w-16 h-12 object-cover rounded-lg"><div><div class="text-xs font-bold">RECENT BUILD</div><div class="mono text-[10px] opacity-50">Neon mech drone • 3s ago</div></div><span class="ml-auto">⌄</span></div></div>
+</div>
+
+<!-- DESKTOP QUICK -->
+<div class="hidden lg:block hud-card rounded-[16px] p-4">
+<h3 class="font-black text-xs tracking-widest mb-3">QUICK ACTIONS</h3>
+<div class="space-y-2">
+<button onclick="quickPrompt('Cyberpunk City')" class="w-full bg-black border border-yellow-400/30 p-2.5 rounded-xl text-xs text-left">⚡ Cyberpunk City</button>
+<button onclick="quickPrompt('Mech Concept')" class="w-full bg-black border border-white/10 p-2.5 rounded-xl text-xs text-left opacity-70">🤖 Mech Concept</button>
+<button onclick="quickPrompt('Energy Art')" class="w-full bg-black border border-white/10 p-2.5 rounded-xl text-xs text-left opacity-70">🌀 Energy Art</button>
+</div>
+<div class="mt-4"><h3 class="font-black text-xs tracking-widest mb-2">RECENT BUILD</h3><div class="bg-black border border-white/10 rounded-xl p-2 flex gap-2 items-center"><img id="recentThumb2" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=100" class="w-12 h-9 object-cover rounded"><div><div class="text-[11px] font-bold">Neon mech drone</div><div class="mono text-[9px] opacity-50">3s ago</div></div></div></div>
+</div>
+</div>
+
+<div id="hist" class="hidden md:grid grid-cols-6 gap-2 mt-4"></div>
+</main>
+</div>
+
+<!-- MOBILE BOTTOM NAV EXACT LIKE IMAGE -->
+<div class="md:hidden flex justify-around items-center bg-[#0a0a0a] border-t border-yellow-400/20 p-3 pb-6">
+<button class="flex flex-col items-center text-yellow-400"><span class="text-lg">🏠</span><div class="w-6 h-0.5 bg-yellow-400 mt-1 rounded"></div></button>
+<button class="opacity-40 flex flex-col items-center"><span class="text-lg">⚡</span></button>
+<button class="opacity-40 flex flex-col items-center"><span class="text-lg">⚙️</span></button>
+<button class="opacity-40 flex flex-col items-center"><span class="text-lg">📜</span></button>
+<button class="opacity-40 flex flex-col items-center"><span class="text-lg">⚙️</span></button>
+</div>
+<div class="hidden md:block text-center mono text-[10px] tracking-[3px] opacity-30 py-2 border-t border-yellow-400/10">BLACK ENERGY AI</div>
+</div>
+
+<script>
+let hist=JSON.parse(localStorage.getItem('be_v7')||'[]');
+function quickPrompt(t){document.getElementById('prompt').value=t+' black energy neon yellow lightning cyberpunk high detail cinematic'; generate()}
+function generate(){
+let p=document.getElementById('prompt').value.trim(); if(!p) return alert('Enter prompt da!');
+let btn=document.getElementById('genBtn'), img=document.getElementById('out'), status=document.getElementById('status');
+btn.innerText='GENERATING...'; status.innerText='Generating...';
+let url=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=1024&height=768&model=turbo&seed=${Date.now()}&nologo=true&enhance=true`;
+let tempImg=new Image(); tempImg.onload=()=>{img.src=url; btn.innerText='GENERATE'; status.innerText='Done • 4.2s'; document.getElementById('recentThumb').src=url; let rt2=document.getElementById('recentThumb2'); if(rt2) rt2.src=url; hist.unshift(url); if(hist.length>12) hist.pop(); localStorage.setItem('be_v7',JSON.stringify(hist))}; tempImg.src=url;
+}
+</script>
+</body></html>
