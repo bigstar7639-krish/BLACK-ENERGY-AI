@@ -26,4 +26,70 @@
 <div class="flex items-center gap-2 mb-6 mt-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-black border border-yellow-300">⚡</div><div class="leading-none"><div class="font-black text-[11px] tracking-widest">BLACK</div><div class="font-black text-[11px] text-yellow-400 tracking-widest">ENERGY AI</div></div><span class="mono text-[7px] bg-[#1a1a1a] border border-yellow-400/20 px-2 py-0.5 rounded-full ml-1">v1.3.0 • ONLINE</span></div>
 
 <div class="space-y-1.5 flex-1">
-<div class="hud-active p-2.5 rounded-xl flex items-center gap-2 text-black"><span class="w-4 h-4 bg-black/20 rounded flex items-center justify-center text-[10px]">⚡</span><span class="font-black text-
+<div class="hud-active p-2.5 rounded-xl flex items-center gap-2 text-black"><span class="w-4 h-4 bg-black/20 rounded flex items-center justify-center text-[10px]">⚡</span><span class="font-black text-[11px]">Dashboard</span></div>
+<div class="hud p-2.5 rounded-xl flex items-center gap-2 opacity-80"><span class="w-4 h-4 bg-white/10 rounded flex items-center justify-center text-[10px]">🎨</span><span class="text-[11px]">AI Generator</span></div>
+<div class="hud p-2.5 rounded-xl flex items-center gap-2 opacity-60"><span class="w-4 h-4 bg-white/5 rounded flex items-center justify-center text-[10px]">🕒</span><span class="text-[11px]">History</span></div>
+<div class="hud p-2.5 rounded-xl flex items-center gap-2 opacity-60"><span class="w-4 h-4 bg-white/5 rounded flex items-center justify-center text-[10px]">🧩</span><span class="text-[11px]">Templates</span></div>
+<div class="hud p-2.5 rounded-xl flex items-center gap-2 opacity-60"><span class="w-4 h-4 bg-white/5 rounded flex items-center justify-center text-[10px]">⚡</span><span class="text-[11px]">Energy Core</span></div>
+<div class="hud p-2.5 rounded-xl flex items-center gap-2 opacity-60"><span class="w-4 h-4 bg-white/5 rounded flex items-center justify-center text-[10px]">📊</span><span class="text-[11px]">Analytics</span></div>
+<div class="hud p-2.5 rounded-xl flex items-center gap-2 opacity-60"><span class="w-4 h-4 bg-white/5 rounded flex items-center justify-center text-[10px]">⚙️</span><span class="text-[11px]">Settings</span></div>
+</div>
+
+<div class="mono text-[7px] opacity-20 leading-relaxed border-t border-white/5 pt-2 mt-2">SECURE CONNECTION • MODEL: BEA-4 ENGINE • LATENCY 12ms • GPU: ACTIVE</div>
+</div>
+
+<!-- CENTER CONTENT EXACT LIKE IMAGE -->
+<div class="flex-1 p-4 bg-[#050505] relative">
+<div class="flex justify-between items-start mb-4"><div><h1 class="font-black text-xl">AI <span class="text-yellow-400">GENERATOR</span></h1><p class="mono text-[10px] opacity-40 mt-1">Generate images, concepts, and energy-driven designs with BLACK ENERGY AI</p></div><div class="flex items-center gap-2"><div class="w-7 h-7 bg-[#111] border border-white/10 rounded-lg flex items-center justify-center">☰</div><div class="w-7 h-7 bg-[#111] border border-white/10 rounded-lg flex items-center justify-center">🔔</div><div class="w-7 h-7 bg-[#222] rounded-full border border-white/10"></div></div></div>
+
+<div class="hud p-3 flex gap-3 items-center"><div class="flex-1"><div class="mono text-[8px] text-yellow-400 font-bold tracking-widest">PROMPT</div><input id="promptD" class="w-full bg-transparent outline-none text-[11px] mt-1" value="A futuristic cyberpunk city powered by dark energy, neon yellow lightning, high detail, cinematic"></div><button onclick="gen('D')" id="genBtnD" class="bg-yellow-400 text-black px-6 py-2.5 rounded-xl font-black text-[11px]">GENERATE</button></div>
+
+<div class="grid grid-cols-3 gap-3 mt-4">
+<div class="col-span-2 hud p-3"><div class="flex justify-between mb-2"><span class="font-black text-[11px]">OUTPUT</span><span class="mono text-[8px] opacity-40">Generated in 4.2s</span></div><div class="bg-black rounded-xl overflow-hidden aspect-[16/9] relative"><img id="outD" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=600" class="w-full h-full object-cover"><div class="absolute bottom-0 left-0 right-0 bg-black/80 p-1.5 mono text-[7px] flex justify-between"><span>Resolution 2048x1365 • Style: Photoreal • Credits -35</span></div></div></div>
+<div class="hud p-3"><div class="font-black text-[11px] mb-2">ENERGY CORE</div><div class="flex justify-center my-3"><div class="orb"></div></div><div class="mono text-[9px] space-y-1"><div class="text-yellow-400">Core Status: STABLE — 98.7%</div><div class="flex justify-between opacity-60"><span>Power Level</span><span>∞ / ∞</span></div><div class="text-center text-yellow-400 font-bold tracking-widest text-[8px] mt-2 pt-2 border-t border-white/5">DARK POWER • INFINITE CREATION</div></div><div class="grid grid-cols-3 gap-1.5 mt-3"><div class="bg-black border border-yellow-400/20 rounded-lg p-1.5 text-center"><div class="mono text-[6px] opacity-40">ACTIVE SESSIONS</div><div class="font-black text-[13px]">1,274</div><div class="mono text-[7px] text-green-400">+12%</div></div><div class="bg-black border border-white/10 rounded-lg p-1.5 text-center"><div class="mono text-[6px] opacity-40">TOTAL CREATIONS</div><div class="font-black text-[13px]">53,901</div><div class="mono text-[7px] text-green-400">+8.3%</div></div><div class="bg-black border border-white/10 rounded-lg p-1.5 text-center"><div class="mono text-[6px] opacity-40">ENERGY USED</div><div class="font-black text-[13px]">842.5 kW</div><div class="mono text-[7px] text-red-400">-2.1%</div></div></div></div>
+</div>
+<div class="text-center mono text-[8px] opacity-20 mt-4 tracking-[2px]">BLACK ENERGY AI • SECURE • BEA-4 ENGINE • 12ms • GPU ACTIVE</div>
+</div>
+
+<!-- RIGHT MOBILE PREVIEW EXACT LIKE IMAGE -->
+<div class="w-[320px] bg-[#0a0a0a] border-l border-yellow-400/15 p-3 flex flex-col items-center">
+<div class="w-full max-w-[280px] border-[3px] border-white/10 rounded-[30px] overflow-hidden bg-black p-2">
+<div class="bg-[#050505] rounded-[24px] overflow-hidden border border-yellow-400/20">
+<div class="p-3 flex justify-between items-center"><span class="mono text-[8px] text-yellow-400 font-bold">BLACK ENERGY AI</span><div class="w-6 h-6 bg-[#222] rounded-full"></div></div>
+<div class="flex flex-col items-center py-4"><div class="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-200 via-yellow-400 to-orange-600 shadow-[0_0_30px_#ffeb00]"></div><div class="font-black text-sm mt-3 tracking-widest">GENERATOR</div></div>
+<div class="p-3"><div class="hud p-2.5 flex items-center gap-2 rounded-xl"><input id="promptM" class="flex-1 bg-transparent outline-none text-[10px]" placeholder="Describe your creation..."><span class="text-yellow-400">🎙️</span><span class="bg-yellow-400 text-black w-5 h-5 rounded-full flex items-center justify-center text-[10px]">➤</span></div>
+<div class="mt-3"><div class="font-black text-[11px] mb-2">QUICK ACTIONS</div><div class="grid grid-cols-2 gap-1.5"><button onclick="quick('cyberpunk')" class="hud p-2 rounded-xl text-[9px] flex items-center gap-1"><span class="text-yellow-400">⚡</span> Cyberpunk City</button><button onclick="quick('mech')" class="hud p-2 rounded-xl text-[9px] flex items-center gap-1"><span>🤖</span> Mech Concept</button><button onclick="quick('energy')" class="hud p-2 rounded-xl text-[9px] flex items-center gap-1 col-span-2"><span class="text-blue-400">🌀</span> Energy Art</button></div></div>
+<div class="mt-3"><div class="font-black text-[11px] mb-2">RECENT BUILD</div><div class="hud p-2 flex gap-2 items-center"><img id="outM" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=100" class="w-12 h-9 object-cover rounded-lg"><div class="flex-1"><div class="text-[10px] font-bold">RECENT BUILD</div><div class="mono text-[8px] opacity-50">Neon mech drone • 3s ago</div></div><span class="text-[10px]">⌄</span></div></div>
+</div>
+<div class="flex justify-around p-3 bg-[#0a0a0a]"><span class="text-yellow-400">🏠</span><span class="opacity-30">⚡</span><span class="opacity-30">⚙️</span><span class="opacity-30">📜</span><span class="opacity-30">⚙️</span></div>
+<div class="text-center mono text-[6px] text-yellow-400/60 py-1 tracking-widest">DARK POWER • INFINITE CREATION</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- MOBILE LAYOUT EXACT -->
+<div class="lg:hidden">
+<div class="p-3"><h1 class="font-black text-xl">AI <span class="text-yellow-400">GENERATOR</span></h1><p class="mono text-[10px] opacity-40">Generate images, concepts, and energy-driven designs with BLACK ENERGY AI</p></div>
+<div class="p-3"><div class="hud p-3"><div class="mono text-[9px] text-yellow-400 font-bold">PROMPT</div><input id="promptMob" class="w-full bg-transparent outline-none text-[12px] mt-2" value="A futuristic cyberpunk city powered by dark energy"><button onclick="gen('Mob')" id="genBtnMob" class="w-full bg-yellow-400 text-black py-3 rounded-xl font-black text-sm mt-3">GENERATE</button></div></div>
+<div class="p-3"><div class="hud p-3"><div class="flex justify-between mb-2"><span class="font-black text-xs">OUTPUT</span><span class="mono text-[9px] opacity-40">Generated in 4.2s</span></div><div class="bg-black rounded-xl overflow-hidden aspect-[4/3]"><img id="outMob" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=600" class="w-full h-full object-cover"></div></div></div>
+<div class="p-3"><div class="hud p-4"><div class="font-black text-sm mb-3">ENERGY CORE</div><div class="flex justify-center my-4"><div class="w-24 h-24 rounded-full orb"></div></div><div class="mono text-[11px]"><div class="text-yellow-400">Core Status: STABLE — 98.7%</div><div class="flex justify-between mt-1"><span class="opacity-50">Power Level</span><span>∞ / ∞</span></div><div class="text-center text-yellow-400 font-bold mt-3 tracking-widest">DARK POWER • INFINITE CREATION</div></div><div class="grid grid-cols-3 gap-2 mt-4"><div class="bg-black border border-yellow-400/20 rounded-xl p-2 text-center"><div class="mono text-[7px] opacity-50">ACTIVE SESSIONS</div><div class="font-black">1,274</div><div class="mono text-[8px] text-green-400">+12%</div></div><div class="bg-black border border-white/10 rounded-xl p-2 text-center"><div class="mono text-[7px] opacity-50">TOTAL CREATIONS</div><div class="font-black">53,901</div></div><div class="bg-black border border-white/10 rounded-xl p-2 text-center"><div class="mono text-[7px] opacity-50">ENERGY USED</div><div class="font-black text-[12px]">842.5 kW</div></div></div></div></div>
+<div class="p-3"><div class="hud p-4"><div class="font-black text-sm mb-3">QUICK ACTIONS</div><div class="grid grid-cols-2 gap-2"><button onclick="quick('cyberpunk')" class="hud p-3 rounded-xl text-xs flex gap-2"><span>⚡</span> Cyberpunk City</button><button onclick="quick('mech')" class="hud p-3 rounded-xl text-xs flex gap-2"><span>🤖</span> Mech Concept</button><button onclick="quick('energy')" class="hud p-3 rounded-xl text-xs flex gap-2 col-span-2"><span>🌀</span> Energy Art</button></div><div class="font-black text-sm mt-4 mb-2">RECENT BUILD</div><div class="hud p-3 flex gap-3 items-center"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=100" class="w-14 h-11 rounded-lg object-cover"><div><div class="font-bold text-xs">RECENT BUILD</div><div class="mono text-[10px] opacity-50">Neon mech drone • 3s ago</div></div><span class="ml-auto">⌄</span></div></div></div>
+<div class="flex justify-around bg-[#0a0a0a] border-t border-yellow-400/20 p-4 pb-8 mt-2"><span class="text-yellow-400 text-xl border-b-2 border-yellow-400 pb-1">🏠</span><span class="opacity-30 text-xl">⚡</span><span class="opacity-30 text-xl">⚙️</span><span class="opacity-30 text-xl">📜</span><span class="opacity-30 text-xl">⚙️</span></div>
+</div>
+
+<div class="text-center mono text-[10px] tracking-[4px] opacity-20 py-3 border-t border-yellow-400/10">BLACK ENERGY AI</div>
+</div>
+</div>
+
+<script>
+function cleanPrompt(p){return p.toLowerCase().replace(/black energy/g,'dark power').replace(/neon yellow light.*/g,'yellow lights').substring(0,120).trim()||'cyberpunk city night lights cinematic';}
+function quick(type){const map={cyberpunk:'Futuristic cyberpunk city at night with yellow lights cinematic ultra detailed',mech:'Futuristic robot mech armor glowing yellow core sci-fi',energy:'Abstract flowing energy art yellow orange swirls glowing'}; document.querySelectorAll('input').forEach(i=>i.value=map[type]); gen('D');}
+function gen(which){
+ let input=document.getElementById('prompt'+which); if(!input) input=document.getElementById('promptMob'); let p=cleanPrompt(input.value); if(!p) return;
+ let btn=document.getElementById('genBtn'+which); if(!btn) btn=document.getElementById('genBtnMob'); btn.innerText='GENERATING...';
+ let url=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=1024&height=1024&model=turbo&seed=${Date.now()}&nologo=true&safe=true`;
+ let img=new Image(); img.onload=()=>{['outD','outM','outMob'].forEach(id=>{let el=document.getElementById(id); if(el) el.src=url}); btn.innerText='GENERATE';}; img.onerror=()=>{let url2=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=1024&height=1024&model=flux&seed=${Date.now()}&nologo=true`; ['outD','outM','outMob'].forEach(id=>{let el=document.getElementById(id); if(el) el.src=url2}); btn.innerText='GENERATE';}; img.src=url;
+}
+</script>
+</body></html>
