@@ -4,168 +4,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BLACK ENERGY AI - Dashboard</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://jsdelivr.net"></script>
-  <!-- Google Fonts for futuristic look -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- FIXED CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   
   <style>
-    body {
-      font-family: 'Rajdhani', sans-serif;
-      background-color: #050505;
-    }
-    .font-orbitron {
-      font-family: 'Orbitron', sans-serif;
-    }
-    /* Cyberpunk custom borders and glows */
-    .cyber-border {
-      border: 1px solid rgba(234, 179, 8, 0.2);
-      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-    }
-    .cyber-border-active {
-      border: 1px solid rgba(234, 179, 8, 1);
-      box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
-    }
-    .text-glow {
-      text-shadow: 0 0 8px rgba(234, 179, 8, 0.6);
-    }
-    .glow-sphere {
-      box-shadow: 0 0 50px rgba(234, 179, 8, 0.4), inset 0 0 30px rgba(234, 179, 8, 0.6);
-    }
+    body{font-family:'Space Grotesk','Rajdhani',sans-serif;background:#000}
+    .font-orbitron{font-family:'Orbitron',sans-serif}
+    .mono{font-family:'JetBrains Mono',monospace}
+    .cyber-border{border:1px solid rgba(255,235,0,.22);box-shadow:inset 0 0 10px rgba(0,0,0,.8),0 0 15px rgba(255,235,0,.08)}
+    .cyber-active{border:1px solid #FFEB00;background:#FFEB00;color:#000;box-shadow:0 0 18px rgba(255,235,0,.5)}
+    .text-glow{text-shadow:0 0 8px rgba(255,235,0,.6)}
+    .orb-glass{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 32% 32%,#fff 0%,#FFEB00 15%,rgba(0,0,0,.6) 55%);border:1.5px solid rgba(255,235,0,.5);box-shadow:0 0 30px #FFEB00,0 0 80px rgba(255,235,0,.25);position:relative}
+    .orb-glass::after{content:'⚡';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:52px;color:#FFEB00;text-shadow:0 0 12px #FFEB00,0 0 30px #FFEB00;z-index:2}
+    .orb-core{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff 0%,#FFEB00 22%,#000 62%);box-shadow:0 0 18px #FFEB00;position:relative}
+    .orb-core::after{content:'⚡';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;color:#000}
+    .logo-hex{width:34px;height:34px;background:#FFEB00;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);display:flex;align-items:center;justify-content:center}
   </style>
 </head>
-<body class="text-gray-300 min-h-screen flex flex-col justify-between p-4 md:p-8 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-950/20 via-black to-black select-none">
+<body class="text-gray-300 min-h-screen flex flex-col p-2 md:p-4 bg-black select-none relative overflow-x-hidden">
 
-  <!-- Header Ambient Element -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-yellow-500/10 blur-[100px] pointer-events-none"></div>
+  <!-- Ambient Glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[150px] bg-yellow-500/15 blur-[80px] pointer-events-none"></div>
 
-  <!-- MAIN CONTAINER (Desktop Dashboard + Mobile Preview Grid) -->
-  <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start my-auto">
+  <!-- TOP BIG ORB - EXACT LIKE YOUR PIC -->
+  <div class="relative flex justify-center h-[100px] md:h-[120px] w-full max-w-7xl mx-auto">
+    <div class="absolute top-0 left-1/2 md:left-[52%] -translate-x-1/2 w-[150px] h-[150px] md:w-[180px] md:h-[180px]"><div class="orb-glass"></div><div class="absolute inset-0 bg-yellow-400/10 blur-[25px] rounded-full -z-10"></div></div>
+  </div>
+
+  <!-- MAIN 2 UI GRID -->
+  <div class="max-w-[1150px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-4 items-start -mt-5 relative z-10">
     
-    <!-- LEFT & CENTER: DESKTOP DASHBOARD (9 Columns) -->
-    <main class="lg:col-span-9 grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md relative">
-      
-      <!-- Top Branding Bar -->
-      <div class="col-span-1 md:col-span-4 flex flex-wrap items-center justify-between border-b border-zinc-800/80 pb-4 mb-2">
+    <!-- DESKTOP DASHBOARD - 9 Cols -->
+    <main class="lg:col-span-8 p-2.5 rounded-[18px] border border-yellow-400/20 bg-[#0a0a0a] backdrop-blur-md relative">
+      <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-yellow-400/50 rounded-tl-[18px]"></div><div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-yellow-400/50 rounded-tr-[18px]"></div>
+      <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-yellow-400/50 rounded-bl-[18px]"></div><div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-yellow-400/50 rounded-br-[18px]"></div>
+
+      <div class="bg-[#0c0c0c] rounded-[14px] p-2.5 border border-yellow-400/10">
+      <!-- Top Bar -->
+      <div class="flex flex-wrap items-center justify-between border-b border-zinc-800/80 pb-3 mb-3">
         <div class="flex items-center gap-3">
-          <!-- Logo Icon -->
-          <div class="w-10 h-10 border border-yellow-500 flex items-center justify-center rounded bg-black/50 cyber-border-active">
-            <span class="text-yellow-500 font-bold font-orbitron text-xl text-glow">⚡</span>
-          </div>
-          <div>
-            <h1 class="font-orbitron font-black text-xl text-white tracking-wider">BLACK ENERGY AI</h1>
-            <span class="text-[10px] font-orbitron border border-emerald-500/30 text-emerald-400 bg-emerald-950/30 px-2 py-0.5 rounded-full">v1.3.0 • ONLINE</span>
-          </div>
+          <div class="logo-hex"><span class="text-black font-black text-[16px]">⚡</span></div>
+          <div><h1 class="font-black text-[12px] text-white tracking-wider">BLACK <span class="text-[#FFEB00]">ENERGY AI</span></h1><span class="mono text-[6px] border border-emerald-500/30 text-emerald-400 bg-emerald-950/30 px-1.5 py-0.5 rounded-full">v1.3.0 • ONLINE</span></div>
         </div>
-        
-        <!-- Top Nav Controls -->
-        <div class="flex items-center gap-6 mt-4 md:mt-0">
-          <button class="text-zinc-500 hover:text-white transition"><span class="text-lg">☰</span></button>
-          <button class="text-zinc-500 hover:text-yellow-500 transition relative">
-            <span class="text-lg">🔔</span>
-            <span class="absolute top-0 right-0 w-2 h-2 bg-yellow-500 rounded-full"></span>
-          </button>
-          <div class="w-8 h-8 rounded-full border border-zinc-700 bg-zinc-800 overflow-hidden flex items-center justify-center text-xs">👤</div>
-        </div>
+        <div class="flex items-center gap-3"><span class="text-zinc-500">☰</span><span class="text-zinc-500">🔔</span><div class="w-7 h-7 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[10px]">◍</div></div>
       </div>
 
-      <!-- Column 1: Sidebar Navigation -->
-      <nav class="col-span-1 md:col-span-1 flex flex-col gap-1.5 border-r border-zinc-900 pr-2">
-        <button class="flex items-center gap-3 px-3 py-2.5 rounded text-left bg-yellow-500/10 text-yellow-500 border-l-2 border-yellow-500 font-semibold tracking-wide text-sm">
-          <span>📊</span> Dashboard
-        </button>
-        <button class="flex items-center gap-3 px-3 py-2.5 rounded text-left text-zinc-400 hover:bg-zinc-900 hover:text-white transition text-sm">
-          <span>🔮</span> AI Generator
-        </button>
-        <button class="flex items-center gap-3 px-3 py-2.5 rounded text-left text-zinc-400 hover:bg-zinc-900 hover:text-white transition text-sm">
-          <span>📝</span> History
-        </button>
-        <button class="flex items-center gap-3 px-3 py-2.5 rounded text-left text-zinc-400 hover:bg-zinc-900 hover:text-white transition text-sm">
-          <span>📐</span> Templates
-        </button>
-        <button class="flex items-center gap-3 px-3 py-2.5 rounded text-left text-zinc-400 hover:bg-zinc-900 hover:text-white transition text-sm">
-          <span>💎</span> Energy Core
-        </button>
-        <button class="flex items-center gap-3 px-3 py-2.5 rounded text-left text-zinc-400 hover:bg-zinc-900 hover:text-white transition text-sm">
-          <span>📈</span> Analytics
-        </button>
-        <div class="border-t border-zinc-900 my-2"></div>
-        <button class="flex items-center gap-3 px-3 py-2.5 rounded text-left text-zinc-400 hover:bg-zinc-900 hover:text-white transition text-sm">
-          <span>⚙️</span> Settings
-        </button>
-      </nav>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+        <!-- Sidebar -->
+        <nav class="md:col-span-1 flex flex-col gap-1 border-r border-zinc-900 pr-2">
+          <button class="flex items-center gap-2 px-3 py-2.5 rounded bg-[#FFEB00] text-black font-bold text-[9px]"><span>⚡</span> Dashboard</button>
+          <button class="flex items-center gap-2 px-3 py-2 rounded text-zinc-400 hover:bg-zinc-900 text-[9px]"><span>◧</span> AI Generator</button>
+          <button class="flex items-center gap-2 px-3 py-2 rounded text-zinc-400 hover:bg-zinc-900 text-[9px]"><span>◫</span> History</button>
+          <button class="flex items-center gap-2 px-3 py-2 rounded text-zinc-400 hover:bg-zinc-900 text-[9px]"><span>◈</span> Templates</button>
+          <button class="flex items-center gap-2 px-3 py-2 rounded text-zinc-400 hover:bg-zinc-900 text-[9px]"><span>◍</span> Energy Core</button>
+          <button class="flex items-center gap-2 px-3 py-2 rounded text-zinc-400 hover:bg-zinc-900 text-[9px]"><span>◎</span> Analytics</button>
+          <button class="flex items-center gap-2 px-3 py-2 rounded text-zinc-400 hover:bg-zinc-900 text-[9px]"><span>⚙️</span> Settings</button>
+        </nav>
 
-      <!-- Column 2,3,4: Main AI Canvas Dashboard Area -->
-      <div class="col-span-1 md:col-span-3 flex flex-col gap-4">
-        
-        <!-- Inner Header Section -->
-        <div>
-          <h2 class="text-2xl font-orbitron font-bold text-white tracking-wide text-glow">AI GENERATOR</h2>
-          <p class="text-xs text-zinc-500">Generate images, concepts, and energy-driven designs with BLACK ENERGY AI</p>
+        <!-- Main -->
+        <div class="md:col-span-3 flex flex-col gap-3">
+          <div><h2 class="text-[14px] font-black text-white tracking-wide">AI <span class="text-[#FFEB00]">GENERATOR</span></h2><p class="mono text-[6.5px] text-zinc-500">Generate images, concepts, and energy-driven designs with BLACK ENERGY AI</p></div>
+
+          <div class="p-2.5 rounded-lg bg-[#111] border border-yellow-400/20 flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
+            <div class="w-full"><span class="mono text-[6px] text-[#FFEB00] font-bold tracking-widest block mb-1">PROMPT</span><input id="prompt" class="w-full bg-black/50 p-1.5 rounded border border-zinc-900 text-[8px] text-white outline-none" value="A futuristic cyberpunk city powered by dark energy, neon yellow lightning, high detail, cinematic"></div>
+            <button onclick="generate()" id="genBtn" class="w-full md:w-auto px-5 py-2.5 bg-[#FFEB00] text-black font-black rounded text-[9px] hover:bg-yellow-400 transition shadow-[0_0_20px_rgba(255,235,0,.3)] shrink-0">GENERATE</button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div class="p-2.5 rounded-lg bg-[#111] border border-zinc-800"><span class="mono text-[7px] text-zinc-400 uppercase block">OUTPUT</span><span class="mono text-[5.5px] text-emerald-400">Generated in 4.2s</span><div class="my-2 aspect-video rounded border border-yellow-500/20 bg-black overflow-hidden relative"><img id="out" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500&q=80" class="w-full h-full object-cover"><div class="absolute bottom-0 left-0 right-0 text-[5px] font-mono bg-black/80 p-1 text-zinc-400">Resolution 2048x1365 • Style: Photoreal • Credits -35</div></div></div>
+            <div class="p-2.5 rounded-lg bg-[#111] border border-zinc-800"><span class="mono text-[7px] text-zinc-400 uppercase block">ENERGY CORE</span><div class="flex justify-center py-2"><div class="w-[56px] h-[56px]"><div class="orb-core"></div></div></div><div class="border-t border-zinc-800 pt-2 mono text-[6px] space-y-1"><div class="flex justify-between"><span class="text-zinc-500">Core Status:</span><span class="text-emerald-400 font-bold">STABLE — 98.7%</span></div><div class="flex justify-between"><span class="text-zinc-500">Power Level</span><span class="text-[#FFEB00] font-bold">∞ / ∞</span></div><div class="text-[5px] tracking-widest text-center text-[#FFEB00]/70 pt-1">DARK POWER • INFINITE CREATION</div></div></div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2">
+            <div class="p-2 bg-black border border-[#FFEB00]/20 rounded text-center"><span class="mono text-[5px] text-zinc-500 block">ACTIVE SESSIONS</span><span class="font-black text-[12px] text-white block">1,274</span><span class="mono text-[5px] text-emerald-400">+12%</span></div>
+            <div class="p-2 bg-black border border-white/10 rounded text-center"><span class="mono text-[5px] text-zinc-500 block">TOTAL CREATIONS</span><span class="font-black text-[12px] text-white block">53,901</span><span class="mono text-[5px] text-emerald-400">+8.3%</span></div>
+            <div class="p-2 bg-black border border-white/10 rounded text-center"><span class="mono text-[5px] text-zinc-500 block">ENERGY USED</span><span class="font-black text-[12px] text-white block">842.5 kW</span><span class="mono text-[5px] text-red-400">-2.1%</span></div>
+          </div>
+          <div class="mono text-[5px] opacity-30 text-center tracking-wider border-t border-white/5 pt-2">SECURE CONNECTION • MODEL: BEA-4 ENGINE • LATENCY 12ms • GPU: ACTIVE</div>
         </div>
+      </div>
+      </div>
+    </main>
 
-        <!-- Prompt Entry Box -->
-        <div class="p-4 rounded-lg bg-zinc-900/60 border border-zinc-800 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-          <div class="w-full">
-            <span class="text-[10px] font-orbitron text-yellow-500 uppercase tracking-widest block mb-1">Prompt</span>
-            <p class="text-sm text-zinc-300 font-mono bg-black/40 p-2 rounded border border-zinc-950">A futuristic cyberpunk city powered by dark energy, neon yellow lightning, high detail, cinematic</p>
+    <!-- MOBILE PREVIEW - 4 Cols -->
+    <div class="lg:col-span-4 flex justify-center">
+      <div class="w-[300px] border-[3px] border-white/10 rounded-[28px] bg-black p-1.5 shadow-[0_0_40px_rgba(255,235,0,.15)]">
+        <div class="bg-[#050505] rounded-[22px] border border-[#FFEB00]/20 overflow-hidden">
+          <div class="p-3 flex justify-between"><span class="mono text-[8px] text-[#FFEB00] font-bold">BLACK ENERGY AI</span><div class="w-6 h-6 bg-[#222] rounded-full border border-white/10 flex items-center justify-center text-[10px]">◍</div></div>
+          <div class="flex flex-col items-center py-3"><div class="w-[84px] h-[84px]"><div class="orb-glass"></div></div><div class="font-black text-[13px] mt-3 tracking-widest text-[#FFEB00]">GENERATOR</div></div>
+          <div class="p-3">
+            <div class="p-2.5 flex items-center gap-2 rounded-xl bg-[#111] border border-[#FFEB00]/20"><input id="promptM" class="flex-1 bg-transparent outline-none text-[9px] text-white" placeholder="Describe your creation..."><span class="text-[#FFEB00]">🎙️</span><span class="bg-[#FFEB00] text-black w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black">➤</span></div>
+            <div class="font-black text-[10px] mt-4 mb-2">QUICK ACTIONS</div>
+            <div class="grid grid-cols-2 gap-1.5"><button onclick="quick('cyberpunk')" class="p-2 rounded-lg text-[8.5px] bg-black border border-[#FFEB00]/20 flex gap-1.5"><span class="text-[#FFEB00]">⚡</span> Cyberpunk City</button><button onclick="quick('mech')" class="p-2 rounded-lg text-[8.5px] bg-black border border-white/10 flex gap-1.5"><span>🤖</span> Mech Concept</button><button class="p-2 rounded-lg text-[8.5px] bg-black border border-white/10 flex gap-1.5 col-span-2"><span>◍</span> Energy Art</button></div>
+            <div class="font-black text-[10px] mt-4 mb-2">RECENT BUILD</div><div class="p-2 flex gap-2.5 items-center bg-black border border-yellow-400/10 rounded-lg"><img id="outM" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=80&q=80" class="w-12 h-9 rounded-lg object-cover"><div><div class="text-[9px] font-bold text-white">RECENT BUILD</div><div class="mono text-[7px] opacity-50">Neon mech drone • 3s ago</div></div></div>
           </div>
-          <button class="w-full md:w-auto px-6 py-3 bg-yellow-500 text-black font-orbitron font-bold tracking-wider rounded text-sm hover:bg-yellow-400 transition shadow-[0_0_20px_rgba(234,179,8,0.3)] shrink-0 self-end md:self-center">
-            GENERATE
-          </button>
+          <div class="flex justify-around p-3 border-t border-[#FFEB00]/10"><span class="text-[#FFEB00] text-[18px] border-b-2 border-[#FFEB00]">🏠</span><span class="opacity-40">⚡</span><span class="opacity-40">⚙️</span><span class="opacity-40">📜</span><span class="opacity-40">⚙️</span></div>
+          <div class="text-center mono text-[6px] text-[#FFEB00]/50 pb-3">DARK POWER • INFINITE CREATION</div>
         </div>
+      </div>
+    </div>
 
-        <!-- Middle Split Layout: Output Preview vs Energy Core -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          
-          <!-- Box Left: Output Render -->
-          <div class="p-4 rounded-lg bg-zinc-900/40 border border-zinc-800 flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-orbitron text-zinc-400 uppercase tracking-widest block mb-1">Output</span>
-              <span class="text-xs text-emerald-400">Generated in 4.2s</span>
-            </div>
-            <!-- Mock Generated Image Canvas -->
-            <div class="my-3 aspect-video w-full rounded border border-yellow-500/20 bg-cover bg-center flex items-center justify-center relative overflow-hidden group" 
-                 style="background-image: url('https://unsplash.com');">
-              <!-- Cyberpunk/Lightning Graphic Overlay Effect -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-yellow-950/20 to-transparent mix-blend-color-dodge"></div>
-              <div class="absolute bottom-2 left-2 text-[10px] font-mono bg-black/80 px-2 py-1 rounded text-zinc-400 border border-zinc-800">
-                Resolution 2048x1365 • Style: Photoreal • Credits -35
-              </div>
-            </div>
-          </div>
+  </div>
 
-          <!-- Box Right: Energy Core System status -->
-          <div class="p-4 rounded-lg bg-zinc-900/40 border border-zinc-800 flex flex-col justify-between relative overflow-hidden">
-            <div>
-              <span class="text-[10px] font-orbitron text-zinc-400 uppercase tracking-widest block mb-1">Energy Core</span>
-            </div>
-            
-            <!-- Graphic Animated Core Display -->
-            <div class="flex flex-col items-center justify-center py-4 relative">
-              <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-yellow-600 via-amber-400 to-yellow-300 glow-sphere animate-pulse flex items-center justify-center border-4 border-black/40">
-                <div class="w-16 h-16 rounded-full bg-black/90 border border-yellow-500/40 flex items-center justify-center">
-                  <span class="text-yellow-500 text-xs font-orbitron font-bold animate-spin text-glow" style="animation-duration: 8s;">🌀</span>
-                </div>
-              </div>
-            </div>
+  <div class="text-center font-black tracking-[8px] text-[18px] md:text-[22px] mt-6 text-white">BLACK ENERGY AI</div>
 
-            <div class="border-t border-zinc-800/80 pt-2 text-xs font-mono space-y-1 z-10">
-              <div class="flex justify-between"><span class="text-zinc-500">Core Status:</span> <span class="text-emerald-400 font-bold">STABLE — 98.7%</span></div>
-              <div class="flex justify-between"><span class="text-zinc-500">Power Level:</span> <span class="text-yellow-500 font-bold font-orbitron">∞ / ∞</span></div>
-              <div class="text-[10px] font-orbitron tracking-wider text-center text-yellow-500/60 pt-1 uppercase">Dark Power • Infinite Creation</div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Bottom Row Content: Metrics Counters Grid -->
-        <div class="grid grid-cols-3 gap-3">
-          <div class="p-3 bg-zinc-900/60 border border-zinc-800/80 rounded text-center">
-            <span class="text-[10px] uppercase text-zinc-500 font-orbitron block">Active Sessions</span>
-            <span class="text-xl font-orbitron font-bold text-white block my-0.5">1,274</span>
-            <span class="text-[10px] text-emerald-400 font-mono">+12%</span>
-          </div>
-          <div class="p-3 bg-zinc-900/60 border border-zinc-800/80 rounded text-center">
+<script>
+function quick(t){const m={cyberpunk:'Futuristic cyberpunk city night yellow lightning cinematic ultra detailed',mech:'Futuristic robot mech armor glowing yellow core sci-fi',energy:'Abstract energy art yellow orange swirls glowing'}; document.getElementById('prompt').value=m[t]; document.getElementById('promptM').value=m[t]; generate()}
+function generate(){let p=document.getElementById('prompt').value.trim()||document.getElementById('promptM').value.trim(); if(!p) return; let btn=document.getElementById('genBtn'); btn.innerText='...'; let safe=p.toLowerCase().replace(/black energy/g,'dark power').substring(0,120); let url=`https://image.pollinations.ai/prompt/${encodeURIComponent(safe)}?width=600&height=340&model=turbo&seed=${Date.now()}&nologo=true&safe=true`; let img=new Image(); img.onload=()=>{document.getElementById('out').src=url; document.getElementById('outM').src=url; btn.innerText='GENERATE';}; img.onerror=()=>{document.getElementById('out').src=url.replace('turbo','flux'); btn.innerText='GENERATE';}; img.src=url;}
+</script>
+</body>
+</html>
