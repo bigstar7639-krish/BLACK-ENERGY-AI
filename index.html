@@ -1,79 +1,87 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BLACK ENERGY AI - Exact</title><script src="https://cdn.tailwindcss.com"></script>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>BLACK ENERGY AI - Same Logo & Colors</title><script src="https://cdn.tailwindcss.com"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=JetBrains+Mono:wght@600&display=swap');*{font-family:'Space Grotesk',sans-serif}.mono{font-family:'JetBrains Mono',monospace}
-.tech-frame{border:1px solid rgba(255,235,0,.2);background:#050505;position:relative;border-radius:18px;overflow:visible}
-.tech-frame::before,.tech-frame::after{content:'';position:absolute;width:40px;height:40px;border-color:rgba(255,235,0,.5);border-style:solid}
-.tech-frame::before{top:-1px;left:-1px;border-width:2px 0 0 2px;border-radius:18px 0 0 0}
-.tech-frame::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;border-radius:0 0 18px 0}
-.card{border:1px solid rgba(255,235,0,.28);background:linear-gradient(180deg,#141414,#0a0a0a);border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
-.lightning-orb{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9) 0%,rgba(255,235,0,.9) 15%,rgba(255,150,0,.3) 35%,transparent 70%);box-shadow:0 0 20px rgba(255,235,0,.6),0 0 60px rgba(255,235,0,.2),inset 0 0 20px rgba(255,235,0,.3);border:1px solid rgba(255,235,0,.4);position:relative;overflow:hidden}
-.lightning-orb::before{content:'⚡';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:42px;color:#ffeb00;text-shadow:0 0 15px #ffeb00,0 0 30px #ffeb00;filter:drop-shadow(0 0 10px #ffeb00)}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=JetBrains+Mono:wght@500;700&display=swap');*{font-family:'Space Grotesk',sans-serif}.mono{font-family:'JetBrains Mono',monospace}
+:root{--y:#FFEB00;--y2:#FFD600}
+.front-card{border:1px solid rgba(255,235,0,.32);background:linear-gradient(180deg,#151515 0%,#0c0c0c 100%);border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 0 0 1px rgba(0,0,0,1)}
+.front-yellow{background:#FFEB00;color:#000;box-shadow:0 0 15px rgba(255,235,0,.4)}
+.logo-hex{width:32px;height:32px;background:#FFEB00;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);display:flex;align-items:center;justify-content:center;position:relative}
+.logo-hex::after{content:'⚡';position:absolute;font-size:18px;color:#000;font-weight:900;transform:rotate(0deg)}
+.tech-outer{border:1px solid rgba(255,235,0,.18);border-radius:20px;background:#050505;position:relative}
+.tech-outer::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:linear-gradient(135deg,rgba(255,235,0,.3),transparent,rgba(255,235,0,.2));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.orb-main{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff 0%,#FFEB00 18%,#FF9500 38%,#000 70%);box-shadow:0 0 25px #FFEB00,0 0 60px rgba(255,235,0,.35),inset -8px -8px 20px rgba(0,0,0,.8);position:relative}
+.orb-main::after{content:'⚡';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:38px;color:rgba(0,0,0,.7);filter:drop-shadow(0 0 8px #FFEB00)}
+.lightning-ball{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9) 0%,rgba(255,235,0,.85) 12%,rgba(0,0,0,0) 35%),radial-gradient(circle at 50% 50%,rgba(255,235,0,.9) 0%,rgba(255,180,0,.4) 25%,transparent 65%);border:1.5px solid rgba(255,235,0,.5);box-shadow:0 0 20px #FFEB00,0 0 50px rgba(255,235,0,.25),inset 0 0 30px rgba(255,235,0,.2);position:relative;overflow:hidden}
+.lightning-ball::before{content:'⚡';position:absolute;top:48%;left:52%;transform:translate(-50%,-50%);font-size:44px;color:#FFEB00;text-shadow:0 0 12px #FFEB00,0 0 25px #FFEB00;animation:flash 2s infinite}
+@keyframes flash{0%,100%{opacity:.9}50%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}}
 </style>
 </head>
-<body class="bg-black min-h-screen flex items-center justify-center p-3">
+<body class="bg-black min-h-screen flex items-center justify-center p-2 md:p-4">
 
-<div class="w-full max-w-[1020px]">
-<!-- TOP LIGHTNING ORB - EXACT LIKE LEFT PIC -->
-<div class="relative h-[70px] md:h-[80px] flex justify-center">
-<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[125px] h-[125px] md:w-[150px] md:h-[150px] z-20"><div class="lightning-orb"></div><div class="absolute inset-0 bg-yellow-400/10 blur-[18px] rounded-full -z-10"></div></div>
+<div class="w-full max-w-[1080px]">
+<!-- TOP ORB - EXACT LIKE REFERENCE - NO OVERLAP -->
+<div class="relative flex justify-center h-[75px]">
+<div class="absolute top-0 w-[138px] h-[138px] md:w-[160px] md:h-[160px] z-20 pointer-events-none"><div class="lightning-ball"></div><div class="absolute inset-0 bg-yellow-400/15 blur-[22px] rounded-full -z-10"></div></div>
 </div>
 
-<div class="tech-frame p-2 md:p-3 -mt-6">
+<div class="tech-outer p-2.5 md:p-3 -mt-5">
 <div class="flex flex-col lg:flex-row gap-2.5">
 
-<!-- LEFT DESKTOP -->
-<div class="flex-1 card p-2.5 bg-[#0c0c0c]">
+<!-- LEFT DESKTOP - SAME LOGO + SAME COLORS -->
+<div class="flex-1 front-card p-2.5 bg-[#0a0a0a]">
 <div class="flex">
-<div class="w-[125px] bg-[#0a0a0a] rounded-[10px] border border-yellow-400/10 p-2 flex flex-col">
-<div class="flex items-center gap-1.5 mb-3 p-1.5 bg-black rounded-lg border border-yellow-400/20"><div class="w-6 h-6 bg-yellow-400 rounded-md flex items-center justify-center text-black font-black text-[10px]">⚡</div><div class="leading-none"><div class="font-black text-[7px]">BLACK</div><div class="font-black text-[7px] text-yellow-400">ENERGY AI</div></div><span class="mono text-[5px] ml-auto border border-yellow-400/20 px-1 rounded-full">v1.3.0 • ONLINE</span></div>
+<div class="w-[128px] bg-[#080808] border border-yellow-400/10 rounded-[10px] p-2 flex flex-col">
+<div class="flex items-center gap-1.5 mb-3 p-1.5 bg-black rounded-lg border border-[#FFEB00]/25"><div class="logo-hex flex-shrink-0"></div><div class="leading-none"><div class="font-black text-[7px] tracking-wider">BLACK</div><div class="font-black text-[7px] tracking-wider text-[#FFEB00]">ENERGY AI</div></div><span class="mono text-[5px] bg-[#1a1a1a] border border-[#FFEB00]/15 px-1 py-0.5 rounded-full ml-auto">v1.3.0 • ONLINE</span></div>
 <div class="space-y-1">
-<div class="bg-yellow-400 text-black p-1.5 rounded-lg font-black text-[8px] flex gap-1 items-center"><span>⊞</span> Dashboard</div>
-<div class="bg-[#1a1a1a] border border-white/10 p-1.5 rounded-lg text-[8px] flex gap-1 items-center text-white/70"><span>◧</span> AI Generator</div>
-<div class="bg-[#111] border border-white/5 p-1.5 rounded-lg text-[8px] flex gap-1 items-center opacity-50"><span>🕒</span> History</div>
-<div class="bg-[#111] border border-white/5 p-1.5 rounded-lg text-[8px] flex gap-1 items-center opacity-50"><span>⚙️</span> Templates</div>
-<div class="bg-[#111] border border-white/5 p-1.5 rounded-lg text-[8px] flex gap-1 items-center opacity-50"><span>◍</span> Energy Core</div>
-<div class="bg-[#111] border border-white/5 p-1.5 rounded-lg text-[8px] flex gap-1 items-center opacity-50"><span>📊</span> Analytics</div>
-<div class="bg-[#111] border border-white/5 p-1.5 rounded-lg text-[8px] flex gap-1 items-center opacity-50"><span>⚙️</span> Settings</div>
+<div class="front-yellow p-2 rounded-lg font-black text-[8.5px] flex gap-1.5 items-center"><span class="w-3.5 h-3.5 bg-black/15 rounded flex items-center justify-center text-[8px]">⊞</span> Dashboard</div>
+<div class="bg-[#151515] border border-white/10 p-2 rounded-lg text-[8.5px] flex gap-1.5 items-center text-white/80"><span class="w-3.5 h-3.5 bg-white/10 rounded flex items-center justify-center text-[8px]">◧</span> AI Generator</div>
+<div class="bg-[#111] border border-white/5 p-2 rounded-lg text-[8.5px] flex gap-1.5 items-center opacity-60"><span class="w-3.5 h-3.5 flex items-center justify-center text-[8px]">🕒</span> History</div>
+<div class="bg-[#111] border border-white/5 p-2 rounded-lg text-[8.5px] flex gap-1.5 items-center opacity-60"><span class="w-3.5 h-3.5 flex items-center justify-center">⚙️</span> Templates</div>
+<div class="bg-[#111] border border-white/5 p-2 rounded-lg text-[8.5px] flex gap-1.5 items-center opacity-60"><span class="w-3.5 h-3.5 flex items-center justify-center">◍</span> Energy Core</div>
+<div class="bg-[#111] border border-white/5 p-2 rounded-lg text-[8.5px] flex gap-1.5 items-center opacity-60"><span class="w-3.5 h-3.5 flex items-center justify-center">📊</span> Analytics</div>
+<div class="bg-[#111] border border-white/5 p-2 rounded-lg text-[8.5px] flex gap-1.5 items-center opacity-60"><span class="w-3.5 h-3.5 flex items-center justify-center">⚙️</span> Settings</div>
 </div>
 <div class="mt-auto mono text-[5px] opacity-20 pt-2 border-t border-white/5 leading-tight">SECURE CONNECTION • MODEL: BEA-4 ENGINE • LATENCY 12ms • GPU: ACTIVE</div>
 </div>
+
 <div class="flex-1 ml-2">
-<div class="flex justify-between mb-2"><div><h1 class="font-black text-[12px]">AI <span class="text-yellow-400">GENERATOR</span></h1><p class="mono text-[6px] opacity-40">Generate images, concepts, and energy-driven designs with BLACK ENERGY AI</p></div><div class="flex gap-1"><div class="w-4 h-4 bg-[#111] border border-white/10 rounded flex items-center justify-center text-[7px]">☰</div><div class="w-4 h-4 bg-[#111] border border-white/10 rounded flex items-center justify-center text-[7px]">🔔</div><div class="w-4 h-4 bg-[#222] rounded-full"></div></div></div>
-<div class="card p-2 flex gap-2 items-center bg-[#111]"><div class="flex-1"><div class="mono text-[6px] text-yellow-400 font-bold">PROMPT</div><input id="prompt" class="w-full bg-transparent outline-none text-[7px]" value="A futuristic cyberpunk city powered by dark energy, neon yellow lightning, high detail, cinematic"></div><button onclick="generate()" id="genBtn" class="bg-yellow-400 text-black px-3 py-1.5 rounded-lg font-black text-[7px]">GENERATE</button></div>
+<div class="flex justify-between mb-2.5"><div><h1 class="font-black text-[12px] tracking-wide">AI <span class="text-[#FFEB00]">GENERATOR</span></h1><p class="mono text-[6px] opacity-40 mt-0.5">Generate images, concepts, and energy-driven designs with BLACK ENERGY AI</p></div><div class="flex gap-1"><div class="w-4 h-4 bg-[#151515] border border-white/10 rounded flex items-center justify-center text-[7px]">☰</div><div class="w-4 h-4 bg-[#151515] border border-white/10 rounded flex items-center justify-center text-[7px]">🔔</div><div class="w-4 h-4 bg-[#222] rounded-full border border-white/10"></div></div></div>
+
+<div class="front-card p-2 flex gap-2 items-center bg-[#121212]"><div class="flex-1"><div class="mono text-[6px] text-[#FFEB00] font-bold tracking-widest">PROMPT</div><input id="prompt" class="w-full bg-transparent outline-none text-[7.5px] mt-0.5 text-white" value="A futuristic cyberpunk city powered by dark energy, neon yellow lightning, high detail, cinematic"></div><button onclick="generate()" id="genBtn" class="front-yellow px-4 py-1.5 rounded-lg font-black text-[7.5px] tracking-wide">GENERATE</button></div>
+
 <div class="grid grid-cols-3 gap-1.5 mt-2">
-<div class="col-span-2 card p-1.5 bg-[#111]"><div class="flex justify-between mb-1"><span class="font-black text-[7px]">OUTPUT</span><span class="mono text-[5px] opacity-40">Generated in 4.2s</span></div><div class="bg-black rounded-lg overflow-hidden aspect-[16/9] border border-white/10 relative"><img id="out" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500" class="w-full h-full object-cover"><div class="absolute bottom-0 left-0 right-0 bg-black/80 p-1 mono text-[5px]">Resolution 2048x1365 • Style: Photoreal • Credits -35</div></div></div>
-<div class="card p-1.5 bg-[#111]"><div class="font-black text-[7px]">ENERGY CORE</div><div class="flex justify-center my-1.5"><div class="w-9 h-9 rounded-full lightning-orb" style="font-size:14px"></div></div><div class="mono text-[5px]"><div class="text-yellow-400">Core Status: STABLE — 98.7%</div><div class="flex justify-between opacity-50"><span>Power Level</span><span>∞ / ∞</span></div><div class="text-center text-yellow-400 font-bold text-[4px] mt-1 pt-1 border-t border-white/10">DARK POWER • INFINITE CREATION</div></div><div class="grid grid-cols-3 gap-1 mt-1.5"><div class="bg-black border border-yellow-400/20 rounded p-1 text-center"><div class="mono text-[4px] opacity-40">ACTIVE SESSIONS</div><div class="font-black text-[8px]">1,274</div><div class="mono text-[4px] text-green-400">+12%</div></div><div class="bg-black border border-white/10 rounded p-1 text-center"><div class="mono text-[4px] opacity-40">TOTAL CREATIONS</div><div class="font-black text-[8px]">53,901</div><div class="mono text-[4px] text-green-400">+8.3%</div></div><div class="bg-black border border-white/10 rounded p-1 text-center"><div class="mono text-[4px] opacity-40">ENERGY USED</div><div class="font-black text-[7px]">842.5 kW</div><div class="mono text-[4px] text-red-400">-2.1%</div></div></div></div>
+<div class="col-span-2 front-card p-1.5 bg-[#121212]"><div class="flex justify-between mb-1"><span class="font-black text-[7.5px]">OUTPUT</span><span class="mono text-[5px] opacity-40">Generated in 4.2s</span></div><div class="bg-black rounded-lg overflow-hidden aspect-[16/9] border border-white/10 relative"><img id="out" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500&q=80" class="w-full h-full object-cover"><div class="absolute bottom-0 left-0 right-0 bg-black/85 p-1 mono text-[5px] text-white/70">Resolution 2048x1365 • Style: Photoreal • Credits -35</div></div></div>
+<div class="front-card p-1.5 bg-[#121212]"><div class="font-black text-[7.5px]">ENERGY CORE</div><div class="flex justify-center my-1.5"><div class="w-10 h-10 rounded-full orb-main"></div></div><div class="mono text-[5.5px] space-y-0.5"><div class="text-[#FFEB00]">Core Status: STABLE — 98.7%</div><div class="flex justify-between opacity-50"><span>Power Level</span><span class="font-bold">∞ / ∞</span></div><div class="text-center text-[#FFEB00] font-bold text-[4.5px] mt-1 pt-1 border-t border-white/10 tracking-widest">DARK POWER • INFINITE CREATION</div></div><div class="grid grid-cols-3 gap-1 mt-1.5"><div class="bg-black border border-[#FFEB00]/25 rounded-md p-1 text-center"><div class="mono text-[4px] opacity-40">ACTIVE SESSIONS</div><div class="font-black text-[8.5px] text-white">1,274</div><div class="mono text-[4px] text-green-400">+12%</div></div><div class="bg-black border border-white/10 rounded-md p-1 text-center"><div class="mono text-[4px] opacity-40">TOTAL CREATIONS</div><div class="font-black text-[8.5px] text-white">53,901</div><div class="mono text-[4px] text-green-400">+8.3%</div></div><div class="bg-black border border-white/10 rounded-md p-1 text-center"><div class="mono text-[4px] opacity-40">ENERGY USED</div><div class="font-black text-[7px] text-white">842.5 kW</div><div class="mono text-[4px] text-red-400">-2.1%</div></div></div></div>
 </div>
 </div>
 </div>
 </div>
 
-<!-- RIGHT MOBILE -->
-<div class="w-full lg:w-[220px] flex justify-center">
-<div class="w-[230px] border-2 border-white/10 rounded-[24px] bg-black p-1 shadow-[0_0_30px_rgba(255,235,0,.12)]">
-<div class="bg-[#050505] rounded-[18px] border border-yellow-400/20 overflow-hidden">
-<div class="p-2 flex justify-between"><span class="mono text-[6px] text-yellow-400">BLACK ENERGY AI</span><div class="w-4 h-4 bg-[#222] rounded-full"></div></div>
-<div class="flex flex-col items-center py-2"><div class="w-14 h-14 rounded-full lightning-orb"></div><div class="font-black text-[9px] mt-1.5">GENERATOR</div></div>
-<div class="p-2"><div class="card p-2 flex items-center gap-1 rounded-full bg-[#0f0f0f]"><input id="promptM" class="flex-1 bg-transparent outline-none text-[7px]" placeholder="Describe your creation..."><span class="text-[9px]">🎙️</span><span class="bg-yellow-400 text-black w-3.5 h-3.5 rounded-full flex items-center justify-center text-[7px]">➤</span></div>
-<div class="font-black text-[8px] mt-2 mb-1">QUICK ACTIONS</div><div class="grid grid-cols-2 gap-1"><div class="card p-1 rounded-lg text-[6px] flex gap-1 bg-black"><span class="text-yellow-400">⚡</span> Cyberpunk City</div><div class="card p-1 rounded-lg text-[6px] flex gap-1 bg-black"><span>🤖</span> Mech Concept</div><div class="card p-1 rounded-lg text-[6px] flex gap-1 bg-black col-span-2"><span>◍</span> Energy Art</div></div>
-<div class="font-black text-[8px] mt-2 mb-1">RECENT BUILD</div><div class="card p-1 flex gap-1.5 items-center bg-black"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=60" class="w-8 h-6 rounded object-cover"><div><div class="text-[7px] font-bold">RECENT BUILD</div><div class="mono text-[5px] opacity-50">Neon mech drone • 3s ago</div></div></div>
+<!-- RIGHT MOBILE - SAME LOGO -->
+<div class="w-full lg:w-[215px] flex justify-center">
+<div class="w-[225px] border-[2.5px] border-white/12 rounded-[26px] bg-black p-1 shadow-[0_0_35px_rgba(255,235,0,.15)]">
+<div class="bg-[#050505] rounded-[20px] border border-[#FFEB00]/20 overflow-hidden">
+<div class="p-2.5 flex justify-between items-center"><span class="mono text-[6.5px] text-[#FFEB00] font-bold tracking-widest flex items-center gap-1"><div class="w-4 h-4 bg-[#FFEB00] rounded flex items-center justify-center text-black text-[8px]">⚡</div> BLACK ENERGY AI</span><div class="w-5 h-5 bg-[#222] rounded-full border border-white/10"></div></div>
+<div class="flex flex-col items-center py-2.5"><div class="w-14 h-14 rounded-full lightning-ball"></div><div class="font-black text-[10px] mt-2 tracking-widest">GENERATOR</div></div>
+<div class="p-2"><div class="front-card p-2 flex items-center gap-1 rounded-full bg-[#111]"><input id="promptM" class="flex-1 bg-transparent outline-none text-[7.5px] text-white" placeholder="Describe your creation..."><span class="text-[10px]">🎙️</span><span class="bg-[#FFEB00] text-black w-4 h-4 rounded-full flex items-center justify-center text-[8px] font-black">➤</span></div>
+<div class="font-black text-[8px] mt-2.5 mb-1">QUICK ACTIONS</div><div class="grid grid-cols-2 gap-1"><div class="front-card p-1.5 rounded-lg text-[6.5px] flex gap-1 bg-black border-[#FFEB00]/20"><span class="text-[#FFEB00]">⚡</span> Cyberpunk City</div><div class="front-card p-1.5 rounded-lg text-[6.5px] flex gap-1 bg-black"><span>🤖</span> Mech Concept</div><div class="front-card p-1.5 rounded-lg text-[6.5px] flex gap-1 bg-black col-span-2"><span class="text-blue-400">◍</span> Energy Art</div></div>
+<div class="font-black text-[8px] mt-2.5 mb-1">RECENT BUILD</div><div class="front-card p-1.5 flex gap-2 items-center bg-black"><img id="outM" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=60" class="w-8 h-6 rounded object-cover"><div><div class="text-[7px] font-bold text-white">RECENT BUILD</div><div class="mono text-[5px] opacity-50">Neon mech drone • 3s ago</div></div><span class="ml-auto text-[10px] opacity-50">⌄</span></div>
 </div>
-<div class="flex justify-around p-2 border-t border-yellow-400/10 mt-2"><span class="text-yellow-400 text-[12px]">🏠</span><span class="opacity-30 text-[10px]">⚡</span><span class="opacity-30 text-[10px]">⚙️</span><span class="opacity-30 text-[10px]">📜</span><span class="opacity-30 text-[10px]">⚙️</span></div>
-<div class="text-center mono text-[5px] text-yellow-400/40 pb-2">DARK POWER • INFINITE CREATION</div>
+<div class="flex justify-around p-2.5 border-t border-[#FFEB00]/10 mt-2"><span class="text-[#FFEB00] text-[13px]">🏠</span><span class="opacity-30 text-[11px]">⚡</span><span class="opacity-30 text-[11px]">⚙️</span><span class="opacity-30 text-[11px]">📜</span><span class="opacity-30 text-[11px]">⚙️</span></div>
+<div class="text-center mono text-[5px] text-[#FFEB00]/50 pb-2 tracking-widest">DARK POWER • INFINITE CREATION</div>
 </div>
-</div>
-</div>
-
 </div>
 </div>
 
-<div class="text-center font-black tracking-[5px] text-[16px] mt-3">BLACK ENERGY AI</div>
+</div>
+</div>
+
+<div class="text-center font-black tracking-[6px] text-[15px] md:text-[18px] mt-3 text-white">BLACK ENERGY AI</div>
 </div>
 </div>
 
 <script>
-function generate(){let p=document.getElementById('prompt').value; let safe=p.toLowerCase().replace(/black energy/g,'dark power').substring(0,120); let url=`https://image.pollinations.ai/prompt/${encodeURIComponent(safe)}?width=600&height=340&model=turbo&seed=${Date.now()}&nologo=true&safe=true`; document.getElementById('out').src=url; document.getElementById('genBtn').innerText='GENERATE';}
+function generate(){let p=document.getElementById('prompt').value.trim()||document.getElementById('promptM').value.trim(); if(!p) return; let btn=document.getElementById('genBtn'); btn.innerText='...'; let safe=p.toLowerCase().replace(/black energy/g,'dark power').substring(0,120); let url=`https://image.pollinations.ai/prompt/${encodeURIComponent(safe)}?width=600&height=340&model=turbo&seed=${Date.now()}&nologo=true&safe=true`; let img=new Image(); img.onload=()=>{document.getElementById('out').src=url; let m=document.getElementById('outM'); if(m) m.src=url; btn.innerText='GENERATE';}; img.onerror=()=>{document.getElementById('out').src=url.replace('turbo','flux'); btn.innerText='GENERATE';}; img.src=url;}
 </script>
 </body></html>
